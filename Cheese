@@ -1,7 +1,7 @@
 /**
  * Store details of a type of cheese, its price per Kilo
  * and whether it is in stock.
- * @author Rhaina Madzinga - rm828
+ * @author Rhaina Madzinga 
  * @version 1.0
  */
 public class Cheese {
