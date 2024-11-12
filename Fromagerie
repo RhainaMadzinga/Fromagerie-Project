@@ -1,0 +1,82 @@
+import java.util.ArrayList;
+import java.lang.Math;
+/**
+ * Store details of a Fromagerie (a cheese shop).
+ * @author Rhaina Madzinga  
+ * @version 1.0.
+ */
+public class Fromagerie {
+  private ArrayList<Cheese> cheeseList = new ArrayList<>();
+
+  public Fromagerie() {
+    this.cheeseList = cheeseList;
+  }
+
+  public void addCheese(Cheese aCheese) {
+    cheeseList.add(aCheese);
+
+  }
+
+  public int getNumberOfCheeses() {
+    return cheeseList.size();
+  }
+
+  public int getNumberOfCheeses(int price) {
+    int numberOfCheese = 0;
+    for (Cheese aCheese : cheeseList) {
+      if (aCheese.getPricePerKilo() <= price) {
+        numberOfCheese++;
+      }
+    }
+    return numberOfCheese;
+  }
+
+  public void list() {
+    for (Cheese aCheese : cheeseList) {
+      System.out.println(aCheese.getDetails());
+    }
+  }
+
+  public void setDetails(String name, int price, boolean available) {
+    for (Cheese aCheese : cheeseList) {
+      if (aCheese.getName() == name) {
+        aCheese.setPricePerKilo(price);
+        aCheese.setInStock(available);
+      }
+    }
+  }
+
+  public boolean removeCheese(String name) {
+    boolean cheeseFound = false;
+    for (int i = 0; i < cheeseList.size(); i++) {
+      if (cheeseList.get(i).getName() == name) {
+        cheeseFound = true;
+        cheeseList.remove(i);
+      };
+
+    }
+    return cheeseFound;
+
+  }
+  public Cheese findClosestAvailable(int pricePK) {
+    Cheese aCheese =null;
+    for (Cheese sCheese: cheeseList
+    ) { if (cheeseList.size() == 0) {
+      return null;
+    } else if (cheeseList.size() > 1) {
+      int priceDistance = Math.abs(pricePK - sCheese.getPricePerKilo());
+      for (int i = 0; i < cheeseList.size(); i++) {
+        if (priceDistance < Math.abs(pricePK - cheeseList.get(i).getPricePerKilo())) {
+          aCheese = sCheese;
+        }
+
+      }
+    }
+
+    }
+
+    return aCheese;
+  }
+
+
+}
