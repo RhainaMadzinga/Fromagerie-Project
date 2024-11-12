@@ -1,0 +1,49 @@
+/**
+ * Store details of a type of cheese, its price per Kilo
+ * and whether it is in stock.
+ * @author Rhaina Madzinga - rm828
+ * @version 1.0
+ */
+public class Cheese {
+    private String name;
+    private int pricePerKilo;
+    private Boolean inStock;
+
+    /**
+     * @param  name The name of the Cheese
+     * @param  pricePerKilo The price per Kilo
+     */
+    public Cheese(String name, int pricePerKilo) {
+        this.name = name;
+        this.pricePerKilo = pricePerKilo;
+        this.inStock = true;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public int getPricePerKilo() {
+        return pricePerKilo;
+    }
+
+    public Boolean getInStock() {
+        return inStock;
+    }
+
+
+    public void setPricePerKilo(int pricePerKilo) {
+        this.pricePerKilo = pricePerKilo;
+    }
+
+    public void setInStock(Boolean inStock) {
+        this.inStock = inStock;
+    }
+
+
+    public String getDetails(){
+        return name+" costs "+pricePerKilo+" pence per Kilo";
+
+    }
+
+
+}
