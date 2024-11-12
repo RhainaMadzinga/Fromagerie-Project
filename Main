@@ -1,0 +1,32 @@
+public class Main {
+    public static void main(String[] args) {
+        Cheese cheddar = new Cheese(" Cheddar ",  1000 );
+        Cheese brie = new Cheese ( "Brie",2000 );
+        Cheese Gloucester = new Cheese("Gloucester", 4000);
+        Cheese Parmesan = new Cheese("Parmesan",250);
+
+        Fromagerie fromagerie = new Fromagerie();
+
+        fromagerie.addCheese(cheddar);
+        fromagerie.addCheese(brie);
+        fromagerie.addCheese(Gloucester);
+        fromagerie.addCheese(Parmesan);
+
+        System.out.println(fromagerie.getNumberOfCheeses());
+        System.out.println(fromagerie.getNumberOfCheeses(3000));
+
+
+
+
+        System.out.println(cheddar.getDetails());
+
+        fromagerie.list();
+
+        fromagerie.setDetails("Brie", 3500, true);
+        System.out.println(fromagerie.removeCheese("Brie"));
+        System.out.println(fromagerie.getNumberOfCheeses());
+        System.out.println(fromagerie.findClosestAvailable(2000));
+        System.out.println(fromagerie.getNumberOfCheeses(10000));
+
+    }
+}
